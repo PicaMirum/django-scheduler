@@ -451,7 +451,7 @@ def _api_move_or_resize_by_code(user, id, existed, delta, resize, event_id):
             response_data['status'] = "OK"
     else:
         event = Event.objects.get(id=event_id)
-        dts = 0
+        dts = datetime.timedelta(0)
         dte = delta
         if not resize:
             event.start += delta
